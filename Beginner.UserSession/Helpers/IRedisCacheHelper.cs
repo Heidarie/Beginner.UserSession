@@ -3,6 +3,7 @@
     public interface IRedisCacheHelper
     {
         void Set(string key, string value);
-        string Get(string key);   
+        string Get(string key); 
+        void Delete(string key);
     }
 }

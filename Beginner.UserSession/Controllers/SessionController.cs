@@ -28,5 +28,12 @@ namespace Beginner.UserSession.Controllers
             _redisCacheHelper.Set(key, value);
             return Ok();
         }
+
+        [HttpDelete("{key}")]
+        public IActionResult DeleteSessionValue([FromRoute]string key)
+        {
+            _redisCacheHelper.Delete(key);
+            return Ok();
+        }
     }
 }

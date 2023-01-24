@@ -32,5 +32,10 @@ namespace Beginner.UserSession.Helpers
             var value = cache.GetString(key);
             return value;
         }
+
+        public void Delete(string key)
+        {
+            cache.Remove(key);
+        }
     }
 }
