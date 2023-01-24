@@ -29,7 +29,7 @@ namespace Beginner.UserSession.Controllers
             return Ok();
         }
 
-        [HttpDelete("{key}")]
+        [HttpPost("Logout/{key}")]
         public IActionResult DeleteSessionValue([FromRoute]string key)
         {
             _redisCacheHelper.Delete(key);
