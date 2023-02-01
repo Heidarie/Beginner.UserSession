@@ -7,11 +7,11 @@ namespace Beginner.UserSession.Helpers
     public class RedisCacheHelper : IRedisCacheHelper
     {
         IDistributedCache cache;
-        public RedisCacheHelper()
+        public RedisCacheHelper(IConfiguration configuration)
         {
             var options = Options.Create(new RedisCacheOptions()
             {
-                Configuration = "beginner.redis.cache.windows.net:6380,password=WgQbDYjmsI3n7q1ZSOG7ZiOSPvdfz8AsJAzCaNZr2VM=,ssl=True,abortConnect=False"
+                Configuration = configuration["AzureRedisConnection"]
             });
 
             cache = new RedisCache(options);
